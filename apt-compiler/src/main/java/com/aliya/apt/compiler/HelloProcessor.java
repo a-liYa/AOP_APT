@@ -1,6 +1,7 @@
 package com.aliya.apt.compiler;
 
 import com.aliya.apt.annotation.HelloAnnotation;
+import com.google.auto.service.AutoService;
 import com.squareup.javapoet.JavaFile;
 import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.TypeSpec;
@@ -12,6 +13,7 @@ import java.util.Set;
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.Filer;
 import javax.annotation.processing.ProcessingEnvironment;
+import javax.annotation.processing.Processor;
 import javax.annotation.processing.RoundEnvironment;
 import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Modifier;
@@ -23,6 +25,7 @@ import javax.lang.model.element.TypeElement;
  * @author a_liYa
  * @date 2018/6/23 20:21.
  */
+@AutoService(Processor.class)
 public class HelloProcessor extends AbstractProcessor {
 
     private Filer filer;
